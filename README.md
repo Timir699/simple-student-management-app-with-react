@@ -1,1 +1,1 @@
-Live- preview : simple-student-management-app-with-react.netlify.app
+Live- preview : https:simple-student-management-app-with-react.netlify.app
