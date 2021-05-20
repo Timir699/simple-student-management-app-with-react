@@ -1,0 +1,71 @@
+
+body {
+    padding : 2rem;
+    background-image : linear-gradient( to right,#dcdde1 ,#d2dae2 )
+}
+.input-field {
+    &__form {
+        margin-left : 22rem;
+
+        &-input {
+            padding: 9px 5px;
+            border: none;
+            font-size : 24px;
+            border-radius : 2px;
+            &:focus {
+                outline : none;
+            }   
+        }
+        &-select {
+            padding: 15px 5px;
+            transform : translateY(-8%);
+            margin : 0px 5px;
+            border-radius : 2px;
+            border : none;
+            &:focus {
+                outline : none;
+                border : none;
+                backface-visibility : hidden;
+            }
+        }
+        &-button {
+            background: #ff5e57;
+            border-radius : 2px;
+            border: none;
+            padding: 12px 15px;
+            transform : translateY(-8%);
+            transition : all linear .1s;
+            font-size : 18px;
+            &:hover {
+                background: #0be881;
+                
+            }
+        }
+    }  
+}
+
+.studentlist {
+    //  margin-left : 4rem;
+
+    &__heading {
+        // margin-left : 4rem;
+        color : #576574;
+        font-size : 1.8rem;
+    }
+    &__student {
+        border : 1px solid #b3b3b3;
+        padding: 10px 20px;
+        // margin-left : 4rem;
+        margin-top : 5px;
+        &-btn {
+            border : none;
+            margin-right : 5px;
+            padding: 5px 15px;
+            background : #576574;
+            color : #fff;
+            border-radius : 2px;
+
+        }
+        
+    }
+}
