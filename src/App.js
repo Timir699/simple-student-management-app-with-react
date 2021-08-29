@@ -5,6 +5,8 @@ import Present from './components/Present'
 import Absent from './components/Absent'
 import shortid from 'shortid'
 
+// Getting data From Local Storage
+
 const getallData = () => {
   let allData = localStorage.getItem('allData')
   if (allData) {
@@ -80,6 +82,10 @@ function App() {
     })
     setChangeBtn(false)
   }
+
+  // Set Data to localStorage
+
+
   useEffect(() => {
     localStorage.setItem("allData", JSON.stringify(allData))
     localStorage.setItem("presentData", JSON.stringify(presentData))
