@@ -1,3 +1,5 @@
+#Project_Name: Student Management App
+
 #Project_Details :
 
 This is my second project in react Eco System. In this project, i tried to make a simple student management system with useState hook. Where u can manage data of all students, u can take attendance of students,u can see a student is present or absent. 
