@@ -6,7 +6,7 @@ in this project, I focused on implement SCSS & BEM methodology with react. Under
 
 #Main focus on:
 
-1) Implementation of SCSS & BEM methodology in react app.
+1)Implementation of SCSS & BEM methodology in react app.
 
 2)Handling Edge Cases
 
