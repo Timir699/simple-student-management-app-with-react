@@ -1,10 +1,9 @@
 {
-    "user" : [
+    "user": [
         {
-            "student" : "",
-            "faculty" : "",
-            "id" : ""
-
+            "student": "",
+            "faculty": "",
+            "id": ""
         }
     ]
 }

@@ -1,10 +1,37 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.scss';
 import AllList from './components/AllList'
 import Present from './components/Present'
 import Absent from './components/Absent'
 import shortid from 'shortid'
 
+const getallData = () => {
+  let allData = localStorage.getItem('allData')
+  if (allData) {
+    return JSON.parse(localStorage.getItem('allData'))
+  } else {
+    return []
+  }
+}
+const getPresentData = () => {
+  let presentData = localStorage.getItem('presentData')
+  if (presentData) {
+    return JSON.parse(localStorage.getItem('presentData'))
+  } else {
+    return []
+  }
+}
+
+const getAbsentData = () => {
+  let absentData = localStorage.getItem('absentData')
+  if (absentData) {
+    if (absentData) {
+      return JSON.parse(localStorage.getItem('absentData'))
+    } else {
+      return []
+    }
+  }
+}
 function App() {
   const [inputStudent, setInputStudent] = useState({
     student: '',
@@ -18,9 +45,9 @@ function App() {
       [e.target.name]: e.target.value
     })
   }
-  const [allData, setAllData] = useState([])
-  const [presentData, setPresentData] = useState([])
-  const [absentData, setAbsentData] = useState([])
+  const [allData, setAllData] = useState(getallData())
+  const [presentData, setPresentData] = useState(getPresentData())
+  const [absentData, setAbsentData] = useState(getAbsentData())
   const [changeBtn, setChangeBtn] = useState(false)
   const [editableStudent, setEditableStudent] = useState(null)
 
@@ -36,13 +63,12 @@ function App() {
     } else {
       alert("Please provide valid data")
     }
-
   }
   const updateData = (e) => {
     e.preventDefault()
     if (!editableStudent) return
     const upDatedData = allData.find((item) => {
-      return item.id == editableStudent.id
+      return item.id === editableStudent.id
     })
     upDatedData.student = inputStudent.student
     upDatedData.faculty = inputStudent.faculty
@@ -54,7 +80,11 @@ function App() {
     })
     setChangeBtn(false)
   }
-
+  useEffect(() => {
+    localStorage.setItem("allData", JSON.stringify(allData))
+    localStorage.setItem("presentData", JSON.stringify(presentData))
+    localStorage.setItem("absentData", JSON.stringify(absentData))
+  }, [allData, presentData, absentData])
   return (
     <>
       <div className="input-field">
@@ -96,8 +126,6 @@ function App() {
 
       </div>
     </>
-
-
   );
 }
 
