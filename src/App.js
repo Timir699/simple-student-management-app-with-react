@@ -27,11 +27,9 @@ const getPresentData = () => {
 const getAbsentData = () => {
   let absentData = localStorage.getItem('absentData')
   if (absentData) {
-    if (absentData) {
-      return JSON.parse(localStorage.getItem('absentData'))
-    } else {
-      return []
-    }
+    return JSON.parse(localStorage.getItem('absentData'))
+  } else {
+    return []
   }
 }
 function App() {
