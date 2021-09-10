@@ -5,10 +5,11 @@ const Absent = (props) => {
         const absentClear = absentData.filter((item) => item.id !== absent.id)
         setAbsentData(absentClear)
     }
+    console.log(absentData);
     return (
         <div className="studentlist">
             <h2 className="studentlist__heading">Absent</h2>
-            {absentData.map((absent) => {
+            {absentData?.map((absent) => {
                 return (
                     <div className="studentlist__student" key={absent.id}>
                         <h2>{absent.student}</h2>
